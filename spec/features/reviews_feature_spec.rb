@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'reviewing' do 
 
-  before {Restaurant.create(name: 'KFC')}
+  before {Restaurant.create name: 'KFC'}
 
   scenario 'allows user to leave a review using a form' do
     visit '/restaurants'
@@ -13,5 +13,6 @@ feature 'reviewing' do
     expect(page).to have_content "so so"
     expect(current_path).to eq('/restaurants')
   end
+
   
 end
